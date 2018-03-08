@@ -1,3 +1,37 @@
 <p>
   Incident works!
 </p>
+
+
+<!-- <input type="text" (keyup.enter)='createmethod(topic)' #topic> -->
+<mat-expansion-panel *ngFor="let item of Incidents">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+    Incident Id : {{item.IncidentId}}
+    </mat-panel-title>
+
+     <mat-progress-bar mode="determinate" value={{item.Percentage}}></mat-progress-bar>
+     <mat-panel-description>Percentage :     {{item.Percentage}} </mat-panel-description>       
+  </mat-expansion-panel-header>
+   <p>These are the details of the task created.</p>
+   <mat-panel-description>Application Name :  {{item.ApplicationName}}</mat-panel-description>
+   <mat-panel-description>Comment :      {{item.Comment}}</mat-panel-description>
+   Modified Date :      {{item.ModifiedDate}}
+   Created Date : <p>{{item.CreatedDate}}</p>
+   <!-- <div class="button-row">
+    <button mat-icon-button>
+      <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+    </button>
+   </div> -->
+   <div class="button-row">
+     <button mat-raised-button color="primary">Update</button>
+     <button mat-raised-button color="warn">Delete</button>
+     <a mat-raised-button routerLink=".">Link</a>
+   </div>
+
+    <!-- <button class="btn btn-primary btn-sm" (click)='updatemethod(item)'>update</button>
+    <button class="btn btn-primary btn-sm" (click)='deletemethod(item)'>delete</button>  -->
+
+</mat-expansion-panel>
+
+

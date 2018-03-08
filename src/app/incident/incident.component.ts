@@ -1,4 +1,6 @@
+import { WebAPIService } from '../../../Service/WebAPI.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'Incident',
@@ -6,21 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./incident.component.css']
 })
 export class IncidentComponent implements OnInit {
-
-  Id:number;
-  IncidentId:number;
-  percnetage : number;
-  comment : string;
-  ApplicationName : string;
-  CreatedDate : DateTimeFormat
-  ModifiedDate : DateTimeFormat
+  Incidents;
   
-  constructor() {
+  constructor(Service :  WebAPIService) {
 
+    Service.getIncidents()
+    .subscribe((Response)=>
+    {
+      this.Incidents=Response.json()
+    })
+    }
 
-   }
-
-  ngOnInit() {
+  ngOnInit(  )  {
+    
   }
-
+ 
 }
