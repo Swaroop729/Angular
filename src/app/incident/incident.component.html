@@ -1,37 +1,104 @@
-<p>
+<div class="jumbotron">
   Incident works!
-</p>
+  <button class="primary" (click)="notify()">Allow Notifications !!!</button>
+
+  <push-notification 
+title="ng2-notifications"
+body="Component for Native Push Notifications"
+ #val> 
+</push-notification>
+<button (click)="val.show()" >click</button>
+
+</div>
 
 
-<!-- <input type="text" (keyup.enter)='createmethod(topic)' #topic> -->
-<mat-expansion-panel *ngFor="let item of Incidents">
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-    Incident Id : {{item.IncidentId}}
-    </mat-panel-title>
-
-     <mat-progress-bar mode="determinate" value={{item.Percentage}}></mat-progress-bar>
-     <mat-panel-description>Percentage :     {{item.Percentage}} </mat-panel-description>       
+ 
+<simple-notifications [options]="options"></simple-notifications>
+<div class="widthclass">
+<mat-expansion-panel *ngFor="let item of Incidents"  class="panelheaderheight overlay hm-white-slight waves-light">
+  <mat-expansion-panel-header class="panelheaderheight card card-body info-color text-center z-depth-2">
+      <div class="container white-text mb-0">
+          <div class="row">
+           
+            <div class="col" mdbPopover="{{item.IncidentId}}" placement="top">
+                Incident Id : {{item.IncidentId}}
+                          </div>
+            
+            <div class="col">
+                Application Name :  {{item.ApplicationName}}
+            </div>
+            <div class="col">
+                Percentage : {{item.Percentage}}
+              </div>
+          </div>
+        <div class="row"></div>
+            <div class="row">        <div class="progress">
+                <div class="progress-bar progress-bar-striped" style="width:40%">
+                  Free Space
+                </div>
+                <div class="progress-bar progress-bar-stripedr bg-warning" style="width:10%">
+                  Warning
+                </div>
+                <div class="progress-bar progress-bar-striped bg-danger" style="width:20%">
+                  Danger
+                </div>
+              </div></div>
+        </div>
+              
+        <!-- <mat-panel-title> --> <!-- </mat-panel-title> -->
   </mat-expansion-panel-header>
-   <p>These are the details of the task created.</p>
-   <mat-panel-description>Application Name :  {{item.ApplicationName}}</mat-panel-description>
-   <mat-panel-description>Comment :      {{item.Comment}}</mat-panel-description>
-   Modified Date :      {{item.ModifiedDate}}
-   Created Date : <p>{{item.CreatedDate}}</p>
-   <!-- <div class="button-row">
-    <button mat-icon-button>
-      <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
-    </button>
-   </div> -->
-   <div class="button-row">
-     <button mat-raised-button color="primary">Update</button>
-     <button mat-raised-button color="warn">Delete</button>
-     <a mat-raised-button routerLink=".">Link</a>
-   </div>
 
-    <!-- <button class="btn btn-primary btn-sm" (click)='updatemethod(item)'>update</button>
-    <button class="btn btn-primary btn-sm" (click)='deletemethod(item)'>delete</button>  -->
+  <br/>
+  <div class="row">
+    <div class="col-10">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" style="width:40%">
+              Free Space
+            </div>
+            <div class="progress-bar progress-bar-stripedr bg-warning" style="width:10%">
+              Warning
+            </div>
+            <div class="progress-bar progress-bar-striped bg-danger" style="width:20%">
+              Danger
+            </div>
+          </div>
+        <mat-panel-description>Comment :      {{item.Comment}}</mat-panel-description>
+        Modified Date :      {{item.ModifiedDate | date:'fullDate'}}<br/>   
+        Created Date : {{item.CreatedDate | date:'fullDate'}}
+        <!-- <div class="button-row">
+         <button mat-icon-button>
+           <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+         </button> 
+        </div> -->
+        <div class="col"  mdbTooltip="{{item.Comment}}" placement="top" mdbRippleRadius>
+            Comment :      {{item.Comment}}
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="button-row">
+          <div class="col">
+              
+<button class="btn btn-primary waves-light" mdbRippleRadius><i class="fa fa-magic mr-1"></i> Update</button>                                             
+          </div>
+          <br/>
+          <div class="col">
+<button class="btn btn-default waves-light" mdbRippleRadius>Delete <i class="fa fa-magic ml-1"></i></button>
+                      
+          </div>
+          </div>
+           <!-- <button class="btn btn-primary btn-sm" (click)='updatemethod(item)'>update</button>
+           <button class="btn btn-primary btn-sm" (click)='deletemethod(item)'>delete</button>  -->
+       
+    </div>
+    <div class="row">
+
+      </div>
+  </div>
+  
+
 
 </mat-expansion-panel>
+</div>
+<br/>
 
 

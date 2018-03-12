@@ -7,17 +7,23 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
-
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { RouterModule} from '@angular/router';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { PushNotificationComponent } from 'ng2-notifications/ng2-notifications';
 
 
 import { AppComponent } from './app.component';
 import { IncidentComponent } from './incident/incident.component';
 import { WebAPIService } from '../../Service/WebAPI.service';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IncidentComponent
+    IncidentComponent,
+    HomePageComponent,
+    PushNotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +33,18 @@ import { WebAPIService } from '../../Service/WebAPI.service';
     MatExpansionModule,
     MatButtonModule,
     MatProgressBarModule,
-    MatCardModule
+    MatCardModule,
+    SimpleNotificationsModule.forRoot(),
+    MDBBootstrapModule.forRoot(),
+    RouterModule.forRoot([
+      {      path:'' , component:HomePageComponent,    },
+      {      path:'Incidents' , component:IncidentComponent,    },
+      {      path:'**' , component:HomePageComponent,    },
+    
+    ])
 
   ],
-  providers: [WebAPIService],
+  providers: [WebAPIService,PushNotificationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
