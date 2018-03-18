@@ -11,19 +11,25 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule} from '@angular/router';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { PushNotificationComponent } from 'ng2-notifications/ng2-notifications';
+import { VerticalTimelineModule} from 'angular-vertical-timeline'
+import {DndModule} from 'ng2-dnd';
 
 
 import { AppComponent } from './app.component';
 import { IncidentComponent } from './incident/incident.component';
 import { WebAPIService } from '../../Service/WebAPI.service';
 import { HomePageComponent } from './home-page/home-page.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TasksManagementComponent } from './tasks-management/tasks-management.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IncidentComponent,
     HomePageComponent,
-    PushNotificationComponent
+    PushNotificationComponent,
+    DashboardComponent,
+    TasksManagementComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +40,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatButtonModule,
     MatProgressBarModule,
     MatCardModule,
+    DndModule.forRoot(),
+    VerticalTimelineModule,
     SimpleNotificationsModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([

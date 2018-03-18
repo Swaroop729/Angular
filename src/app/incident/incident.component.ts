@@ -12,6 +12,7 @@ import { PushNotificationComponent } from 'ng2-notifications/ng2-notifications';
 })
 export class IncidentComponent implements OnInit {
   Incidents;
+  tomorrow = new Date(2017, 9, 20, 14,34);
   options = {
     position: ["bottom", "left"],
     timeOut: 5000,
