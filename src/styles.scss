@@ -3,6 +3,7 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import "~angular-vertical-timeline/dist/vertical-timeline.css";
 @import "../node_modules/ng2-dnd/bundles/style.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 
 
@@ -10,6 +11,14 @@
     width: 95%;
     position: absolute;
     left:38px;
+    display:inline-block;
+    top:76px;
+}
+
+.TaskManagement{
+    position: absolute;
+    display:inline-block;
+    top:76px;
 }
 .mat-expansion-panel-header{
     height: 80px !important;
@@ -38,6 +47,7 @@
     position:absolute;
     height:100%;
     width:100%;
+    display: inline-block;
 
 }
         

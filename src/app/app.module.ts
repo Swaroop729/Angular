@@ -21,6 +21,10 @@ import { WebAPIService } from '../../Service/WebAPI.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TasksManagementComponent } from './tasks-management/tasks-management.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { IncidentsComponent } from './incidents/incidents.component';
+import { IncidentDetailsComponent } from './incident-details/incident-details.component';
+import { TaskDetailComponent } from './task-detail/task-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { TasksManagementComponent } from './tasks-management/tasks-management.co
     HomePageComponent,
     PushNotificationComponent,
     DashboardComponent,
-    TasksManagementComponent
+    TasksManagementComponent,
+    NavbarComponent,
+    IncidentsComponent,
+    IncidentDetailsComponent,
+    TaskDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -45,8 +53,11 @@ import { TasksManagementComponent } from './tasks-management/tasks-management.co
     SimpleNotificationsModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
-      {      path:'' , component:HomePageComponent,    },
-      {      path:'Incidents' , component:IncidentComponent,    },
+      {      path:'Home' , component:HomePageComponent,    },
+      {      path:'Incident' , component:IncidentComponent,    },
+      {      path:'Incidents' , component:IncidentsComponent,    },
+      {      path:'TaskManagement' , component:TasksManagementComponent,    },
+      {      path:'IncidentDetail' , component:IncidentDetailsComponent,    },
       {      path:'**' , component:HomePageComponent,    },
     
     ])
