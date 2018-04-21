@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { WebAPIService } from '../../../Service/WebAPI.service';
 
 @Component({
   selector: 'app-incident-details',
@@ -7,9 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncidentDetailsComponent implements OnInit {
 
-  constructor() { }
+  Incidents;
+  Incident;
+  constructor(private route : ActivatedRoute,private service : WebAPIService) { }
 
   ngOnInit() {
-  }
 
+    this.route.paramMap
+    .subscribe(givenparams=> {
+      let id = +givenparams.get('IncidentId')
+      console.log("id",id);
+      console.log("going into another function");
+      this.anotherfunc(id);
+      // this.service.getIncidentDetails(id)
+      // .subscribe((Response)=>
+      // {
+      //   this.Incidents=Response.json()
+      //   this.Incident=this.Incidents[0];
+      //   console.log("Incident",this.Incident);
+      // })
+    })
+  }
+ 
+  anotherfunc(id){
+    console.log("Logging into another function");
+    this.service.getIncidentDetails(id)
+    .subscribe((Response)=>
+    {
+      this.Incidents=Response.json()
+      this.Incident=this.Incidents[0];
+      console.log("Incident",this.Incident);
+    })
+  }
 }

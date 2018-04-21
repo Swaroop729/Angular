@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { NotificationsService } from 'angular2-notifications';
 import { PushNotificationComponent } from 'ng2-notifications/ng2-notifications';
 
-
 @Component({
   selector: 'Incident',
   templateUrl: './incident.component.html',

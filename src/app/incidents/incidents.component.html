@@ -14,7 +14,9 @@
               <div class="col">
                   <i class="fa fa-bolt" aria-hidden="true"></i>
                   <i class="fa fa-hourglass-half" aria-hidden="true"></i>
-                  <i class="fa fa-align-left" aria-hidden="true"></i>
+                  <a [routerLink]="['/IncidentDetail',item.IncidentId]">
+                    <i class="fa fa-align-left" aria-hidden="true"></i>
+                  </a>
                   <i class="fa fa-heart" aria-hidden="true"></i>                    
                   <i class="fa fa-remove" aria-hidden="true"></i>
               </div>
@@ -22,6 +24,7 @@
           
           <div class="row">
             <div class="col">
+                <input-editor label="First Name" id="txtname" [(ngModel)]="item.Comment" type="text" placeholder="Enter First Name" (onSave)="UpdateIncident(item)"></input-editor>
               Comment : {{item.Comment}}
             </div>
           </div>
@@ -40,4 +43,7 @@
             </div>
           </div>
         </div>
+      <br/>
       </div>
+    </div>
+  </div>
