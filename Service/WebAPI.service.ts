@@ -54,4 +54,4 @@ ListByGroupNames: Array<ICountofTickets>= [];
       })
       return this.ListByGroupNames;
      }
-  }
+  }   
