@@ -31,7 +31,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { IncidentsComponent } from './incidents/incidents.component';
 import { IncidentDetailsComponent } from './incident-details/incident-details.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
-import { WorkGraphComponent } from '../../graphs/work-graph/work-graph.component'
+import { WorkGraphComponent } from '../../graphs/work-graph/work-graph.component';
+import { AddIncidentComponent } from './incident/AddIncident/add-incident/add-incident.component'
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { WorkGraphComponent } from '../../graphs/work-graph/work-graph.component
     IncidentsComponent,
     IncidentDetailsComponent,
     TaskDetailComponent,
-    WorkGraphComponent
+    WorkGraphComponent,
+    AddIncidentComponent
   ],
   imports: [
     BrowserModule,
