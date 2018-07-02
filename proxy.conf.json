@@ -1,0 +1,11 @@
+{
+  "/api": {
+     "target":  {
+       "host": "http://localhost:5000/api/"
+     },
+     "secure": false,
+     "changeOrigin": true,
+     "logLevel": "info"
+  }
+}
+

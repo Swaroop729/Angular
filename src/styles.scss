@@ -7,12 +7,26 @@
 
 
 
+#body{
+background-color: #DCDCDC;
+}
+
+.addIncident-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .inputbox-width {
+    width: 100%;
+  }
+
 .widthclass{
     width: 95%;
     position: absolute;
-    left:38px;
+    left:50px;
     display:inline-block;
-    top:76px;
+    top:85px;
 }
 
 .TaskManagement{

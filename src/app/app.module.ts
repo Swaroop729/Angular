@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { HttpModule } from '@angular/http';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule , MatNativeDateModule } from '@angular/material';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule} from '@angular/router';
 import { SimpleNotificationsModule } from 'angular2-notifications';
@@ -20,6 +23,8 @@ import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule } from 'angular4-fusioncharts';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { IncidentComponent } from './incident/incident.component';
@@ -33,6 +38,7 @@ import { IncidentDetailsComponent } from './incident-details/incident-details.co
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 import { WorkGraphComponent } from '../../graphs/work-graph/work-graph.component';
 import { AddIncidentComponent } from './incident/AddIncident/add-incident/add-incident.component'
+import { AddLeaveComponent } from '../../Leave_module/add-leave/add-leave.component';
 
 
 @NgModule({
@@ -48,17 +54,25 @@ import { AddIncidentComponent } from './incident/AddIncident/add-incident/add-in
     IncidentDetailsComponent,
     TaskDetailComponent,
     WorkGraphComponent,
-    AddIncidentComponent
+    AddIncidentComponent,
+    AddLeaveComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatExpansionModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatProgressBarModule,
     MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
     // FusionChartsModule,
     FusionChartsModule.forRoot(FusionCharts, Charts, FintTheme),
     DndModule.forRoot(),
@@ -71,9 +85,11 @@ import { AddIncidentComponent } from './incident/AddIncident/add-incident/add-in
       {      path:'Home' , component:HomePageComponent,    },
       {      path:'Incident' , component:IncidentComponent,    },
       {      path:'Incidents' , component:IncidentsComponent,    },
+      {      path:'AddIncident' , component:AddIncidentComponent,    },
+      {      path:'AddLeave' , component:AddLeaveComponent,    },
       {      path:'TaskManagement' , component:TasksManagementComponent,    },
       {      path:'WorkGraph' , component:WorkGraphComponent,    },
-      {      path:'IncidentDetail/:IncidentId' , component:IncidentDetailsComponent,    },
+      {      path:'IncidentDetail/:Id' , component:IncidentDetailsComponent,    },
       {      path:'**' , component:HomePageComponent,    },
     
     ])
